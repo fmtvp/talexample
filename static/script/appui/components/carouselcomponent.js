@@ -1,4 +1,4 @@
-require.def("sampleapp/appui/components/carouselcomponent",
+define("sampleapp/appui/components/carouselcomponent",
     [
         "antie/widgets/component",
         "antie/datasource",
@@ -43,6 +43,7 @@ require.def("sampleapp/appui/components/carouselcomponent",
             },
 
             onBeforeShow: function (evt) {
+                this.outputElement.id = evt.args.id;
                 this._initialItem = evt.args.initialItem || 0;
                 this._dontShowYet(evt);
                 this.setDescription(evt.args.description || "");
